@@ -1,0 +1,31 @@
+#include <stdio.h>
+void main() {
+    int m, n, i, j;
+    printf("Enter the number of rows and columns for both matrices: ");
+    scanf("%d %d", &m, &n);
+    int arr1[m][n], arr2[m][n], result[m][n];
+    printf("Enter elements of the Matrix A:\n");
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &arr1[i][j]);
+        }
+    }
+    printf("Enter elements of the Matrix B:\n");
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &arr2[i][j]);
+        }
+    }
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            result[i][j] = arr1[i][j] + arr2[i][j];
+        }
+    }
+    printf("Resultant matrix after addition is \n");
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+}
