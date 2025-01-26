@@ -1,0 +1,30 @@
+include <stdio.h>
+#include <string.h>
+void main() {
+    char str[200];
+    char largestWord[50] = "";
+    int i, maxLength = 0, currentLength = 0, wordStart = 0;
+    printf("Enter a Sentence: ");
+    fgets(str, sizeof(str), stdin);
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] != ' ' && str[i] != '\n') {
+            currentLength++;
+        } else {
+            if (currentLength > maxLength) {
+                maxLength = currentLength;
+                strncpy(largestWord, str + wordStart, maxLength);
+                largestWord[maxLength] = '\0';
+            }
+            currentLength = 0;
+            wordStart = i + 1;
+        }
+    }
+    if (currentLength > maxLength) {
+        maxLength = currentLength;
+        strncpy(largestWord, str + wordStart, maxLength);
+        largestWord[maxLength] = '\0';
+    }
+
+    printf("Largest word: %s\n", largestWord);
+    printf("Length: %d\n", maxLength);
+}
