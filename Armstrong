@@ -1,0 +1,20 @@
+//ARMSTRONG
+#include<stdio.h>
+void main()
+{
+        int n,rem,sum=0,org;
+        printf("Enter any number:\n");
+        scanf("%d",&n);
+        org=n;
+        for(;n>0;n=n/10) {
+        rem=n%10;
+        sum=sum+(rem*rem*rem);
+        }
+        if (sum==org)
+        {
+        printf("The number is Armstrong");
+        }
+        else {
+        printf("The Number is not Armstrong");
+        }
+}
